@@ -1,3 +1,28 @@
+  open/ close principle 
+
+
+In this open close principle we are open for extensions but closed for modification.
+for example:
+ 
+class Post
+{
+    void CreatePost(Database db, string postMessage)
+    {
+        if (postMessage.StartsWith("#"))
+        {
+            db.AddAsTag(postMessage);
+        }
+        else
+        {
+            db.Add(postMessage);
+        }
+    }
+
+}
+
+
+
+
 class Post
 {
     void CreatePost(Database db, string postMessage)
