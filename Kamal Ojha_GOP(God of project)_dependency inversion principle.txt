@@ -1,0 +1,55 @@
+Dependency Inversion Principle
+
+In programming, the dependency inversion principle is a way to decouple software modules.
+This principle states that:
+1: High-level modules should not depend on low-level modules. Both should depend on abstractions.
+2: Abstractions should not depend on details. Details should depend on abstractions.
+
+To comply with this principle, we need to use a design pattern known as a dependency inversion pattern, most often solved by using dependency injection.
+Dependency injection is a huge topic and can be as complicated or simple as one might see the need for.
+Typically, dependency injection is used simply by ‘injecting’ any dependencies of a class through the class’ constructor as an input parameter.
+
+For example:
+
+class post
+{
+private ErrorLogger errorLogger = new ErrorLogger();
+
+    void CreatePost(Database db, string postMessage)
+    {
+        try
+        {
+            db.Add(postMessage);
+        }
+        catch (Exception ex)
+        {
+            errorLogger.log(ex.ToString())
+        }
+    }
+}
+
+Observe how we create the ErrorLogger instance from within the Post class. Let’s fix this by using dependency injection.
+
+class Post
+{
+    private Logger _logger;
+
+    public Post(Logger injectedLogger)
+    {
+        _logger = injectedLogger;
+    }
+
+    void CreatePost(Database db, string postMessage)
+    {
+        try
+        {
+            db.Add(postMessage);
+        }
+        catch (Exception ex)
+        {
+            logger.log(ex.ToString())
+        }
+    }
+}
+
+By using dependency injection we no longer rely on the Post class to define the specific type of logger.
