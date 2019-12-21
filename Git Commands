@@ -1,0 +1,32 @@
+git config
+Utility : To set your user name and email in the main configuration file.
+
+git init
+Utility : To initialise a git repository for a new or existing project.
+
+git status
+Utility : To check the status of files you’ve changed in your working directory, i.e, what all has changed since your last commit.
+
+git add
+Utility : adds changes to stage/index in your working directory.
+
+git commit
+Utility : commits your changes and sets it to new commit object for your remote.
+
+git branch
+Utility : Lists out all the branches.
+
+git checkout
+Utility : Switch to different branches
+
+git stash
+Utility : Save changes that you don’t want to commit immediately.
+
+git merge
+Utility : Merge two branches you were working on.
+
+git reset
+Utility : You know when you commit changes that are not complete, this sets your index to the latest commit that you want to work on with.
+
+git remote
+Utility : To check what remote/source you have or add a new remote.
